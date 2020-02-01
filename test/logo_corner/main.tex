@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{background}
+\usepackage{lipsum} % used to create the lipsum text
+
+\backgroundsetup{
+scale=1,
+angle=0,
+opacity=1,
+color=black,
+contents={\begin{tikzpicture}[remember picture,overlay]
+\node at ([xshift=-1.2in,yshift=1.2in] current page.south east) % Adjust the position of the logo.
+{\rule{2cm}{3cm}}; % logo goes here
+\end{tikzpicture}}
+}
+\begin{document}
+
+\lipsum[1-7]
+
+\end{document}

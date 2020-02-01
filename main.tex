@@ -1,0 +1,131 @@
+\documentclass[12pt, a4paper, landscape, dvipsnames]{report}
+
+\usepackage{amsmath}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.15}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{geometry}
+
+%\titleformat{\chapter}[display]{
+%	\normalfont
+	%\huge
+%	\bfseries
+%}{}{0pt}{\Large}
+
+%----------%
+% multicol %
+%----------%
+\setlength\columnsep{50pt}
+
+%--------%
+% colors %
+%--------%
+\definecolor{ffgreen1}{HTML}{50BE99}
+\definecolor{ffgreen2}{HTML}{467D6B}
+\definecolor{ffgray}{HTML}{3D3D3D}
+
+%----------------%
+% chapter format %
+%----------------%
+\titleformat{\chapter}[block]
+    {\color{Green}\normalfont\huge\bfseries}{Unit \thechapter \, -}{0.7em}{\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{10pt}
+
+%----------------%
+% Section format %
+%----------------%
+\titleformat{\section}
+	{\normalfont\fontsize{20}{15}\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{30pt}{10pt}
+% \titlespacing*{\section}{0cm}{-\topskip}{pt}[0pt]
+
+%\title{N5 Physics Learning Outcomes}
+%\date{}
+%\author{}
+
+%-------%
+% Fonts %
+%-------%
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Arial}
+
+%------------%
+% Page Style %
+%------------%
+\fancypagestyle{logo}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth{0pt}}
+    \fancyhead[RE,RO]{\includegraphics[width=0.06\textwidth]{ftlogo.png}}
+}
+
+%----------%
+% Geometry %
+%----------%
+\geometry{margin=1in}
+
+%-----------------------%
+% Unordered list indent %
+%-----------------------%
+\setlist[itemize]{leftmargin=*}
+
+\begin{document}
+
+%\AddToShipoutPictureBG*{%
+%	\AtTextUpperLeft{%
+%		\makebox[\textwidth][r]{%
+%			\raisebox{-\height}{%
+%				\includegraphics[width=2cm]{ftlogo.png}%
+%			}%
+%		}%
+%	}%
+%}%
+
+%------------%
+% Title Page %
+%------------%
+\begin{titlepage}
+	\begin{center}
+		\vspace*{3cm}
+        % Logo
+		\includegraphics[width=0.22\textwidth]{ftlogo} \\
+        % Logo text
+		\vspace*{1cm}
+        \begin{centering}
+            {\fontsize{1.5cm}{1cm}\selectfont
+            \textcolor{Green}{Forward}\textcolor{Gray}{Thinking}
+            }\\
+            \vspace*{0.5cm}
+            {\fontsize{.5cm}{1cm}\selectfont
+            \textcolor{Gray}{HELPING STUDENTS RE-ENGAGE WITH SCIENCE}
+            }\\
+        \end{centering}
+        % Document Title
+		\vspace*{2cm}
+        \begin{centering}
+            {\fontsize{1.5cm}{1cm}\selectfont
+            \textcolor{Green}{N5 Physics Learning Outcomes}
+            }
+        \end{centering}
+	\end{center}
+\end{titlepage}
+
+\pagestyle{logo}
+%\newpage
+
+\input{chapters/unit_1}
+
+\input{chapters/unit_2}
+
+\input{chapters/unit_3}
+
+\end{document}
